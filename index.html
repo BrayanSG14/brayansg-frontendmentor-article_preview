@@ -2,21 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="./style.css">
   <title>Frontend Mentor | Article preview component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 0.6875rem; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
-  <main class="article-card">
-    <img src="./images/drawers.jpg" alt="Green drawer with a plant and picture frames on top" class="article-img">
+  <main>
+    <img src="./images/drawers.jpg" alt="" class="article-img">
 
     <div class="article-content">
       <h1>Shift the overall look and feel by adding these wonderful touches to furniture in your home</h1>
@@ -35,26 +28,24 @@
           </div>
         </div>
 
-        <button class="share-btn" id="share-btn" aria-label="Share this article" aria-expanded="false">
+        <button class="share-btn" id="share-btn">
           <img src="./images/icon-share.svg" alt="">
         </button>
 
         <div class="share-popover" id="share-popover">
           <p>SHARE</p>
-          <a href="#" aria-label="Share on Facebook"><img src="./images/icon-facebook.svg" alt=""></a>
-          <a href="#" aria-label="Share on Twitter"><img src="./images/icon-twitter.svg" alt=""></a>
-          <a href="#" aria-label="Share on Pinterest"><img src="./images/icon-pinterest.svg" alt=""></a>
+          <a href="#"><img src="./images/icon-facebook.svg" alt=""></a>
+          <a href="#"><img src="./images/icon-twitter.svg" alt=""></a>
+          <a href="#"><img src="./images/icon-pinterest.svg" alt=""></a>
         </div>
       </div>
     </div>
   </main>
   <script>
     const shareBtn = document.getElementById('share-btn');
-
-    shareBtn.addEventListener('click', function() {
-      const expandido = shareBtn.getAttribute('aria-expanded') === 'true';
-      const nuevoValor = !expandido;
-      shareBtn.setAttribute('aria-expanded', nuevoValor);
+    const sharePopover = document.getElementById('share-popover');
+    shareBtn.addEventListener('click', function(){
+      sharePopover.classList.toggle('active');
     });
   </script>
 </body>
